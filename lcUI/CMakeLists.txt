@@ -44,6 +44,7 @@ lua/luaqobject.h
 dialogs/addlayerdialog.h
 dialogs/addlinepatterndialog.h
 dialogs/linepatternmanager.h
+dialogs/xrefmanager.h
 setupCAD/setupini.h
 setupCAD/itemStyle.h
         managers/metainfomanager.cpp managers/metainfomanager.h)
@@ -70,6 +71,7 @@ lua/luaqobject.cpp
 dialogs/addlayerdialog.cpp
 dialogs/addlinepatterndialog.cpp
 dialogs/linepatternmanager.cpp
+dialogs/xrefmanager.cpp
 setupCAD/setupini.cpp
 setupCAD/itemStyle.cpp
         managers/metainfomanager.cpp managers/metainfomanager.h)
@@ -83,7 +85,8 @@ widgets/layers.ui
 widgets/linepatternpathpart.ui
 dialogs/addlayerdialog.ui
 dialogs/addlinepatterndialog.ui
-dialogs/linepatternmanager.ui)
+dialogs/linepatternmanager.ui
+dialogs/xrefmanager.ui)
 
 qt5_add_resources(UI_RESOURCES
 ui/resource.qrc)
@@ -121,7 +124,7 @@ if (SEPARATE_BUILD STREQUAL "ON")
     include_directories("${CMAKE_SOURCE_DIR}/../lcviewerqt")
     include_directories("${CMAKE_SOURCE_DIR}/../lcadluascript")
     include_directories("${CMAKE_SOURCE_DIR}/../lcUI")
-else() 
+else()
     include_directories("${CMAKE_SOURCE_DIR}/lckernel")
     include_directories("${CMAKE_SOURCE_DIR}/third_party")
     include_directories("${CMAKE_SOURCE_DIR}/persistence")

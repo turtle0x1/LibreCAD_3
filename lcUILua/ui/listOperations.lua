@@ -6,6 +6,7 @@ require 'actions.copyoperation'
 require 'actions.scaleoperation'
 require 'actions.removeoperation'
 require 'actions.trimoperation'
+require 'actions.xrefoperation'
 
 require 'createActions.createOperations'
 require 'createActions.ellipseoperations'

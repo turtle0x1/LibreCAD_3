@@ -15,7 +15,7 @@ namespace LuaIntf {
 	LUA_USING_LIST_TYPE(std::vector)
 }
 
-void luaOpenQtBridge(lua_State *L) {	
+void luaOpenQtBridge(lua_State *L) {
 	addQtBaseBindings(L);
 	addQtWindowBindings(L);
 	addQtLayoutBindings(L);
@@ -29,7 +29,7 @@ void addQtBaseBindings(lua_State *L) {
 
 	.beginModule("qt")
 		.addFunction("loadUi", &LuaInterface::loadUiFile)
-		
+
 		.beginClass<QObject>("QObject")
 			.addConstructor(LUA_ARGS())
 			.addFunction("findChild", [](QObject* object, std::string name) {
@@ -217,7 +217,7 @@ void addLCBindings(lua_State *L) {
 			.addFunction("setOperationActive", &LCADViewer::setOperationActive)
 			.addFunction("docCanvas", &LCADViewer::docCanvas)
 		.endClass()
-		
+
 		.beginClass<LuaInterface>("LuaInterface")
 			.addFunction("luaConnect", &LuaInterface::luaConnect)
 			.addFunction("connect", &LuaInterface::qtConnect)
@@ -228,7 +228,7 @@ void addLCBindings(lua_State *L) {
 			.addFunction("deleteEvent", &LuaInterface::deleteEvent)
 			.addFunction("triggerEvent", &LuaInterface::triggerEvent)
 		.endClass()
-		
+
 		.beginExtendClass<widgets::LuaScript, QDockWidget>("LuaScript")
 			.addConstructor(LUA_ARGS(QMdiArea*, widgets::CliCommand*))
 		.endClass()

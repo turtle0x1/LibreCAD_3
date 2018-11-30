@@ -176,6 +176,13 @@ function add_toolbar(mainWindow, id, linePatternSelect, lineWidthSelect, colorSe
         getWindow(id):getSnapManager():setEntitySnappable(enabled)
     end)
 
+
+    local xrefGroup = quickAccessTab:addGroup("Xrefs")
+    local xrefButton = create_button("", ":/icons/move_copy.svg")
+
+    quickAccessTab:addWidget(xrefGroup, xrefButton,  1, 1, 1, 1)
+    luaInterface:luaConnect(xrefButton, "pressed()", function() run_basic_operation(id, Xrefoperation) end)
+
     --
     -- MetaInfo
     --

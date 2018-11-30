@@ -30,6 +30,7 @@ extern "C"
 #include "widgets/toolbartab.h"
 #include "widgets/layers.h"
 #include "dialogs/linepatternmanager.h"
+#include "dialogs/xrefmanager.h"
 #include <drawables/tempentities.h>
 #include "widgets/linewidthselect.h"
 #include "widgets/colorselect.h"
