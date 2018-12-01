@@ -12,4 +12,5 @@ setmetatable(Xrefoperation, {
 
 function Xrefoperation:_init(id)
     message("Opening xref manager", id)
+    local x = lc:XrefManager();
 end

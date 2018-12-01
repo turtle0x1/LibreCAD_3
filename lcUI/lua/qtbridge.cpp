@@ -304,6 +304,12 @@ void addLCBindings(lua_State *L) {
             .addFunction("setDocument", &dialog::LinePatternManager::setDocument)
         .endClass()
 
+		.beginExtendClass<dialog::XrefManager, QDialog>("XrefManager")
+            .addFactory([](){
+                return new dialog::XrefManager();
+            })
+        .endClass()
+
         .beginExtendClass<lc::ui::widgets::LinePatternSelect, QComboBox>("LinePatternSelect")
             .addFactory([](QWidget* parent, bool showByLayer, bool showByBlock){
                 return new lc::ui::widgets::LinePatternSelect(nullptr, parent, showByLayer, showByBlock);
